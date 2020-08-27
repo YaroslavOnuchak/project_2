@@ -1,0 +1,201 @@
+@import "vars";
+@import "libs";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: aliceblue;
+}
+#root {
+  width: 100%;
+  position: relative;
+}
+h1 {
+  mix-blend-mode: soft-light;
+  color: #c2ba8b;
+  -webkit-text-stroke: 2px darkgreen;
+  letter-spacing: 1rem;
+  // line-height        : virtual-area;
+  font-size: 500%;
+  margin: 0;
+}
+
+.header {
+  padding: 1rem 2rem;
+  height: 50vh;
+
+  .header_wrap {
+    position: relative;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: url(../img/img1.jpg) center no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    box-shadow: 10px 10px 10px hsla(0, 100%, 50%, 1);
+  }
+}
+
+main {
+  position: relative;
+}
+
+ul {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  // flex-direction : column;
+}
+
+li {
+  margin: 0 auto;
+  width: 300px;
+  height: 300px;
+  background: darkcyan;
+}
+
+i,
+svg.fa-ts {
+  filter: drop-shadow(0 0 0 rgba(128, 128, 128, 0.2));
+  transition: filter 600ms;
+  font-size: 2.5rem;
+  color: #808080;
+
+  &.fa-js:hover {
+    color: #d0b532;
+  }
+  &.fa-vuejs:hover {
+    color: green;
+  }
+
+  &.fa-bootstrap:hover {
+    color: #563d7c;
+  }
+  &.fa-angular:hover {
+    color: red;
+  }
+  &.fa-gulp:hover {
+    color: red;
+  }
+  &.fa-git:hover {
+    color: black;
+    text-shadow: 0 2px 7px black;
+  }
+  &.fa-react:hover {
+    color: #5ad7fd;
+  }
+  &.fa-less:hover {
+    color: #294b7f;
+  }
+  &.fa-sass:hover {
+    color: #cd6799;
+  }
+  &.fa-html5:hover {
+    color: #f16529;
+  }
+}
+i:hover,
+svg.fa-ts:hover {
+  filter: drop-shadow(2rem 0.2rem 0 rgba(128, 128, 128, 0.8))
+    drop-shadow(-2rem -0.2rem 0 rgba(128, 128, 128, 0.8));
+}
+svg.fa-ts {
+  width: 2rem;
+  & path:hover {
+    fill: #007acc;
+  }
+}
+.wrap_slick_carousel {
+  padding: 1rem 0;
+  background: url(../img/photo0.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+}
+.slider {
+  border: 0 solid #000;
+  background: rgba(255, 255, 255, 0.959);
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  padding: 0.5rem;
+  margin: 1.5rem 0;
+}
+.slider-item {
+  // background: darkred;
+  width: 10%;
+  // height: 20px;
+  margin: 0 2rem;
+}
+.slick-slider {
+}
+// /* Слайдер запущен */
+.slick-slider.slick-initialized {
+}
+// /* Слайдер с точками */
+.slick-slider.slick-dotted {
+}
+// /* Ограничивающая оболочка */
+.slick-list {
+  overflow: hidden;
+}
+// /* Лента слайдов */
+.slick-track {
+  display: flex;
+}
+// /* Слайд */
+.slick-slide {
+}
+// /* Слайд активный (показывается) */
+.slick-slide.slick-active {
+}
+// /* Слайд основной */
+.slick-slide.slick-current {
+}
+// /* Слайд по центру */
+.slick-slide.slick-center {
+}
+// /* Клонированный слайд */
+.slick-slide.slick-cloned {
+}
+// /* Стрелка */
+.slick-arrow {
+}
+// /* Стрелка влево */
+.slick-arrow.slick-prev {
+}
+// /* Стрелка вправо */
+.slick-arrow.slick-next {
+}
+// /* Стрелка не активная */
+.slick-arrow.slick-disabled {
+}
+// /* Точки (булиты) */
+.slick-dots {
+}
+.slick-dots li {
+}
+// /* Активная точка */
+.slick-dots li.slick-active {
+}
+// /* Элемент точки */
+.slick-dots li button {
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  opacity: 0.5;
+}
+
+// @import "media";
