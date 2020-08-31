@@ -1,11 +1,11 @@
 console.clear();
 
 var twoPI = 2 * Math.PI;
-
 var canvas = document
     .querySelector("#root")
     .appendChild(document.createElement("canvas")),
   ctx = canvas.getContext("2d");
+canvas.classList.add("canvas-body-bg");
 
 var width = (canvas.width = document.documentElement.clientWidth),
   height = (canvas.height = window.innerHeight);
@@ -198,7 +198,6 @@ function makeWatercolor(e) {
     y: y,
     scale: true,
   });
-  console.log("object", count);
   count++;
 }
 
@@ -206,19 +205,17 @@ function makeWatercolor(e) {
 document.addEventListener("touchstart", makeWatercolor);
 document.addEventListener("click", () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  console.log("objectssssssssssssssssssssssss");
 });
 
 // /* ////////////////////////////////////////////////////////////////////////// */
 let count = 0;
 
 setInterval(() => {
-    makeWatercolor();
-    if (count > 15) {
-        ctx.clearRect(0, 0, width, height);
-        fullPageDraw();
-        count = 0;
-        console.log("swrrr");
+  makeWatercolor();
+  if (count > 15) {
+    ctx.clearRect(0, 0, width, height);
+    fullPageDraw();
+    count = 0;
   }
 }, 2000);
 

@@ -10,10 +10,26 @@
 body {
   background-color: aliceblue;
 }
+
 #root {
   width: 100%;
   position: relative;
+  overflow: hidden;
 }
+
+h1,
+h2 {
+  text-align: center;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
 h1 {
   mix-blend-mode: soft-light;
   color: #c2ba8b;
@@ -26,14 +42,16 @@ h1 {
 
 .header {
   padding: 1rem 2rem;
-  height: 50vh;
+  min-height: 50vh;
+  position: relative;
 
   .header_wrap {
     position: relative;
     width: 80%;
-    height: 100%;
+    min-height: 50vh;
     display: flex;
     justify-content: center;
+    text-align: center;
     flex-direction: column;
     align-items: center;
     background: url(../img/img1.jpg) center no-repeat;
@@ -43,26 +61,116 @@ h1 {
   }
 }
 
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 35%;
+  z-index: 2;
+
+  label {
+    display: flex;
+    margin: 1rem auto;
+    position: relative;
+    width: 6rem;
+    height: 2.5rem;
+    border: 1px solid aquamarine;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    cursor: none;
+    overflow: hidden;
+    filter: drop-shadow(0 0 2px white);
+    -webkit-filter: drop-shadow(0 0 8px white);
+
+    .btn-text {
+      color: white;
+      text-transform: uppercase;
+      text-shadow: 0 0 3px black;
+      z-index: 1;
+    }
+    .btn-wave {
+      display: block;
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 6rem;
+      height: 2.5rem;
+      background: lightblue;
+      box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    }
+
+    #nav-burger-btn {
+      display: none;
+      position: fixed;
+
+      top: 0;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    height: 90vh;
+    left: -110%;
+    background: green;
+    box-shadow: 0rem 0rem 2rem darkgreen;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+  }
+}
+
 main {
   position: relative;
+
+  li {
+    margin: 0 auto;
+    width: 300px;
+    min-height: 300px;
+    background: darkcyan;
+  }
+
+  .list {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    picture {
+      width: 40%;
+      display: flex;
+      align-items: center;
+      filter: drop-shadow(5rem 0 3px rgba(128, 128, 128, 1));
+      -webkit-filter: drop-shadow(5rem 0 3px rgba(128, 128, 128, 1));
+      transform: rotate(-15deg);
+      -webkit-transform: rotate(-15deg);
+      -moz-transform: rotate(-15deg);
+      -ms-transform: rotate(-15deg);
+      -o-transform: rotate(-15deg);
+    }
+  }
+
+  .pic-card {
+    width: 80%;
+  }
 }
 
 ul {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   // flex-direction : column;
 }
 
-li {
-  margin: 0 auto;
-  width: 300px;
-  height: 300px;
-  background: darkcyan;
-}
-
 i,
-svg.fa-ts {
+.fa-ts {
   filter: drop-shadow(0 0 0 rgba(128, 128, 128, 0.2));
   transition: filter 600ms;
   font-size: 2.5rem;
@@ -71,6 +179,7 @@ svg.fa-ts {
   &.fa-js:hover {
     color: #d0b532;
   }
+
   &.fa-vuejs:hover {
     color: green;
   }
@@ -78,47 +187,59 @@ svg.fa-ts {
   &.fa-bootstrap:hover {
     color: #563d7c;
   }
+
   &.fa-angular:hover {
     color: red;
   }
+
   &.fa-gulp:hover {
     color: red;
   }
+
   &.fa-git:hover {
     color: black;
     text-shadow: 0 2px 7px black;
   }
+
   &.fa-react:hover {
     color: #5ad7fd;
   }
+
   &.fa-less:hover {
     color: #294b7f;
   }
+
   &.fa-sass:hover {
     color: #cd6799;
   }
+
   &.fa-html5:hover {
     color: #f16529;
   }
 }
+
 i:hover,
-svg.fa-ts:hover {
+.fa-ts:hover {
   filter: drop-shadow(2rem 0.2rem 0 rgba(128, 128, 128, 0.8))
     drop-shadow(-2rem -0.2rem 0 rgba(128, 128, 128, 0.8));
 }
-svg.fa-ts {
+
+.fa-ts {
   width: 2rem;
+
   & path:hover {
     fill: #007acc;
   }
 }
+
 .wrap_slick_carousel {
   padding: 1rem 0;
-  background: url(../img/photo0.jpg) no-repeat;
+  background: url(../img/photo3.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   width: 100%;
 }
+
 .slider {
   border: 0 solid #000;
   background: rgba(255, 255, 255, 0.959);
@@ -127,68 +248,88 @@ svg.fa-ts {
   padding: 0.5rem;
   margin: 1.5rem 0;
 }
+
 .slider-item {
+  text-align: center;
   // background: darkred;
-  width: 10%;
+  // width: 10%;
   // height: 20px;
-  margin: 0 2rem;
+  // margin: 0 2rem;
 }
+
 .slick-slider {
 }
+
 // /* Слайдер запущен */
 .slick-slider.slick-initialized {
 }
+
 // /* Слайдер с точками */
 .slick-slider.slick-dotted {
 }
+
 // /* Ограничивающая оболочка */
 .slick-list {
   overflow: hidden;
 }
+
 // /* Лента слайдов */
 .slick-track {
   display: flex;
 }
-// /* Слайд */
-.slick-slide {
-}
-// /* Слайд активный (показывается) */
-.slick-slide.slick-active {
-}
-// /* Слайд основной */
-.slick-slide.slick-current {
-}
-// /* Слайд по центру */
-.slick-slide.slick-center {
-}
-// /* Клонированный слайд */
-.slick-slide.slick-cloned {
-}
-// /* Стрелка */
-.slick-arrow {
-}
-// /* Стрелка влево */
-.slick-arrow.slick-prev {
-}
-// /* Стрелка вправо */
-.slick-arrow.slick-next {
-}
-// /* Стрелка не активная */
-.slick-arrow.slick-disabled {
-}
-// /* Точки (булиты) */
-.slick-dots {
-}
-.slick-dots li {
-}
-// /* Активная точка */
-.slick-dots li.slick-active {
-}
-// /* Элемент точки */
-.slick-dots li button {
-}
 
-canvas {
+// // /* Слайд */
+// .slick-slide {
+// }
+
+// // /* Слайд активный (показывается) */
+// .slick-slide.slick-active {
+// }
+
+// // /* Слайд основной */
+// .slick-slide.slick-current {
+// }
+
+// // /* Слайд по центру */
+// .slick-slide.slick-center {
+// }
+
+// // /* Клонированный слайд */
+// .slick-slide.slick-cloned {
+// }
+
+// // /* Стрелка */
+// .slick-arrow {
+// }
+
+// // /* Стрелка влево */
+// .slick-arrow.slick-prev {
+// }
+
+// // /* Стрелка вправо */
+// .slick-arrow.slick-next {
+// }
+
+// // /* Стрелка не активная */
+// .slick-arrow.slick-disabled {
+// }
+
+// // /* Точки (булиты) */
+// .slick-dots {
+// }
+
+// .slick-dots li {
+// }
+
+// // /* Активная точка */
+// .slick-dots li.slick-active {
+// }
+
+// // /* Элемент точки */
+// .slick-dots li button {
+// }
+
+.canvas-body-bg {
   position: fixed;
   top: 0;
   left: 0;
@@ -198,4 +339,60 @@ canvas {
   opacity: 0.5;
 }
 
-// @import "media";
+body {
+  overflow-y: scroll;
+  cursor: none;
+}
+
+body::-webkit-scrollbar {
+  width: 0.1rem;
+}
+.section_project {
+  width: 100%;
+  min-height: 15rem;
+  margin: 2rem 0;
+  background-attachment: fixed;
+  background: url(../img/img.jpg);
+  background-size: cover;
+
+  .wrap-project {
+    display: flex;
+    padding: 0 2% 2%;
+    justify-content: space-between;
+    .project {
+      display: flex;
+      position: relative;
+      max-width: 30%;
+      box-shadow: 0 0 10px white;
+      height: 15rem;
+      picture {
+        height: 100%;
+        .pic-project {
+          // width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+footer {
+  height: 10rem;
+  width: 100%;
+  background: gray;
+}
+.cursor {
+  pointer-events: none;
+
+  &__ball {
+    position: fixed;
+    top: 0;
+    left: 0;
+    mix-blend-mode: difference;
+    z-index: 1000;
+
+    circle {
+      fill: purple;
+    }
+  }
+}
