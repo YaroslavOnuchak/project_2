@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let gulp = require("gulp"),
   { src, dest } = require("gulp"),
   file_include = require("gulp-file-include"),
