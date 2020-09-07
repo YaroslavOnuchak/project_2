@@ -2192,10 +2192,10 @@ const red = new DirectionAwareShadow({
     { offset: 5, color: "hsla(22, 70%, 70%, 0.7)" },
     { offset: 25, color: "hsla(222, 70%, 70%, 0.7)" },
   ],
-  offsetElemPx: 20,
+  offsetElemPx: 200,
 });
 const yellow = new DirectionAwareShadow({
-  target: [".header_wrap"],
+  target: [".header_wrap", ".li"],
   set: [
     { offset: 15, color: "hsla(72, 100%, 50%, 0.9)" },
     { offset: 35, color: "hsla(222, 70%, 70%, 0.7)" },
@@ -2468,6 +2468,24 @@ testWebP(function (support) {
   } else {
     document.querySelector("body").classList.add("no-webp");
   }
+});
+;
+document.addEventListener("scroll", function (event) {
+  let s = scrollY;
+  let h = document.querySelector("body").offsetHeight;
+  let p = (s / h) * 100;
+  console.log("scroll", s + window.innerHeight);
+  //   console.log("scroll", screenTop);
+  console.log(
+    "object",
+    document.querySelector(".section_project").offsetHeight
+  );
+  console.log("bbbbb", document.querySelector("body").offsetHeight);
+  let ppp = 0 + p;
+  console.log("p", -ppp);
+  document.querySelector(
+    ".section_project"
+  ).style.backgroundPositionY = `${ppp}%`;
 });
 ;
 $(function () {

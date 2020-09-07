@@ -107,10 +107,10 @@ const red = new DirectionAwareShadow({
     { offset: 5, color: "hsla(22, 70%, 70%, 0.7)" },
     { offset: 25, color: "hsla(222, 70%, 70%, 0.7)" },
   ],
-  offsetElemPx: 20,
+  offsetElemPx: 200,
 });
 const yellow = new DirectionAwareShadow({
-  target: [".header_wrap"],
+  target: [".header_wrap", ".li"],
   set: [
     { offset: 15, color: "hsla(72, 100%, 50%, 0.9)" },
     { offset: 35, color: "hsla(222, 70%, 70%, 0.7)" },

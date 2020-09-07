@@ -497,6 +497,8 @@ body {
 
 #root {
   width: 100%;
+  display: flex;
+  flex-direction: column;
   position: relative;
   overflow: hidden;
 }
@@ -613,6 +615,7 @@ h1 {
 
 main {
   position: relative;
+  flex: 1 1 auto;
 }
 
 main li {
@@ -768,42 +771,54 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 0.1rem;
+  width: 0;
 }
 
 .section_project {
   width: 100%;
   min-height: 15rem;
   margin: 2rem 0;
-  background-attachment: fixed;
-  background: url(../img/img.jpg);
+  border: 1px solid #000;
+  background: url(../img/img.jpg) no-repeat;
+  background-position-y: 0%;
   background-size: cover;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
 }
 
 .section_project .wrap-project {
   display: flex;
   padding: 0 2% 2%;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .section_project .wrap-project .project {
   display: flex;
+  flex-wrap: wrap;
   position: relative;
-  max-width: 30%;
+  width: 20%;
   box-shadow: 0 0 10px white;
-  height: 15rem;
+  min-height: 15rem;
+  z-index: 22;
 }
 
 .section_project .wrap-project .project picture {
+  position: relative;
   height: 100%;
 }
 
 .section_project .wrap-project .project picture .pic-project {
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 footer {
+  margin-top: 15rem;
   height: 10rem;
   width: 100%;
   background: gray;
@@ -829,4 +844,4 @@ footer {
 
 .webp1 .wrap_slick_carousel { background: url(../img/photo3.webp) no-repeat; }
 
-.webp1 .section_project { background: url(../img/img.webp); }
+.webp1 .section_project { background: url(../img/img.webp) no-repeat; }

@@ -3,6 +3,7 @@
 @@include("_test.js");
 @@include("_canvas.js");
 @@include("_script.js");
+@@include("_paralax_bg.js");
 $(function () {
   $(".slider").slick({
     slidesToShow: 8,
